@@ -253,11 +253,7 @@ class LanguageLearningChatbot:
             self.load_history()
             self.update_script_info(self.learning_lang.value)
     
-    # def update_script_info(self, language: str) -> Dict:
-    #     """Update the script information display based on selected language"""
-    #     if language in self.scripts:
-    #         return gr.Markdown.update(value=f"**Script:** {self.scripts[language]}")
-    #     return gr.Markdown.update(value="")
+
 
     def update_script_info(self, language: str) -> Dict:
         """Update the script information display based on selected language"""
@@ -267,18 +263,9 @@ class LanguageLearningChatbot:
     
     def init_conversation(self, learning_lang: str, known_lang: str, proficiency: str, scenario: str) -> LLMChain:
         """Initialize the LangChain conversation chain with Azure o3-mini model"""
-        # Set your OpenAI API key as environment variable
-        
-        # openai_api_key = "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"  # Replace with your actual API key
-        # llm = ChatOpenAI(
-        #     model="Provider-5/gpt-4o",
-        #     api_key="ddc-beta-v7bjela50v-lI9ep55oPFJz7N06MjSh2Asj2AVGaubLqIC",
-        #     base_url="https://beta.sree.shop/v1",
-        #     temperature=0.7,
-        #     streaming=False
-        # )
+       
 
-        DEEPSEEK_API_KEY = "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"  # Replace with your Deepseek Openrouter API key
+        DEEPSEEK_API_KEY = " "  # Replace with your Deepseek Openrouter API key
         DEEPSEEK_API_BASE = "https://openrouter.ai/api/v1"
         
         llm = ChatOpenAI(
@@ -326,15 +313,7 @@ class LanguageLearningChatbot:
             verbose=True
         )
     
-    # def save_conversation(self, learning_lang: str, known_lang: str, proficiency: str, scenario: str) -> int:
-    #     """Save new conversation to database"""
-    #     c = conn.cursor()
-    #     c.execute('''
-    #     INSERT INTO conversations (learning_language, known_language, proficiency_level, scenario)
-    #     VALUES (?, ?, ?, ?)
-    #     ''', (learning_lang, known_lang, proficiency, scenario))
-    #     conn.commit()
-    #     return c.lastrowid
+    
 
     def save_conversation(self, learning_lang: str, known_lang: str, proficiency: str, scenario: str) -> int:
         """Save new conversation to database"""
