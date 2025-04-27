@@ -1,0 +1,6 @@
+gradio
+sqlite3
+langchain
+pandas
+matplotlib
+openai
